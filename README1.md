@@ -36,6 +36,8 @@ Tämän jälkeen aloin lisäämään init.sls tiedostoja saltin avulla
 
 `mkdir -p /Miniprojekti/srv/salt/neljäs`
 
+Näihin kansioihin lisään palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n 
+
 Näiden jälkeen tein jo valmiiksi top.sls tiedoston 
 
 `mkdir -p /Miniprojekti/srv/salt/top.sls`
