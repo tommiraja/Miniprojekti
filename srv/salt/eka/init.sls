@@ -1,0 +1,2 @@
+/tmp/terveppäterve:
+  file.managed
