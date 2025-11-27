@@ -1,5 +1,6 @@
-Patrick Raportti
+# Patrick Raportti
 
+## Salt tiedostot
 
 Aloitin projektin kloonaamalla Tommin github sivun SSH: osoitteen jonka annoin komennoksi virtuaalikoneelleni
 
@@ -48,5 +49,10 @@ Sinne lisäsin kaikki init.sls tiedostot
 
 <img width="913" height="352" alt="image" src="https://github.com/user-attachments/assets/9d2e3cf2-4b57-4c9d-9685-b917d0aec792" />
 
+Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto
+
+<img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
+
+tulosteesta vielä huomaa että tuloste on idempotenssi
 
 
