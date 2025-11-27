@@ -42,4 +42,7 @@ Näiden jälkeen tein jo valmiiksi top.sls tiedoston
 
 Sinne lisäsin kaikki init.sls tiedostot 
 
+<img width="170" height="169" alt="image" src="https://github.com/user-attachments/assets/66f8f18c-ad81-4e1d-b7bf-1426190a5283" />
+
+
 
