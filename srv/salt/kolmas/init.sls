@@ -1,1 +1,5 @@
-Tästä tulee Firewall
+ufw_pkg:
+  pkg.installed:
+    - name: ufw
+
+

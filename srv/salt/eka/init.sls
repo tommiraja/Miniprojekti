@@ -1,1 +1,4 @@
-Tästä tulee sovellusympäristö
+python_tools:
+  pkg.installed:
+    - pkgs:
+      - python3
