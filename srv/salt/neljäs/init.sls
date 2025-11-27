@@ -1,1 +1,3 @@
-Tästä tulee web palvelin
+apache_pkg:
+  pkg.installed:
+    - name: apache2 
