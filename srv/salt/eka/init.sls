@@ -1,2 +1,1 @@
-/tmp/terveppäterve:
-  file.managed
+Tästä tulee sovellusympäristö
