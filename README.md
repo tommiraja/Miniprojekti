@@ -15,3 +15,7 @@
 # Alkuvalmistelut - Yhdessä työskentely
 
 - Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme
+
+
+<img width="520" height="281" alt="image" src="https://github.com/user-attachments/assets/7c58e49a-3d26-4522-83f6-8e20af1b80b5" />
+
