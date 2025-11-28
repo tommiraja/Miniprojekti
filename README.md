@@ -19,7 +19,7 @@
 
 <img width="520" height="281" alt="image" src="https://github.com/user-attachments/assets/7c58e49a-3d26-4522-83f6-8e20af1b80b5" />
 
-## Patrickin konfigurointia
+## Patrickin konfigurointia yhdessä pohdiskellen
 
 ### Salt tiedostot
 
@@ -73,3 +73,21 @@ Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
 - Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto
 
 <img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
+
+## Vagrant-filen konfigurointia
+
+- Tämän jälkeen teimme vagrant filen johon käytimme Teron antamia ohjeita: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
+
+- Liitimme valmiin tiedosto pohjan vagrant tiedostoon ja lisäsimme meidän tekemän top.sls tiedoston polun
+
+- Jotta pystyimme liittymään vagrantin avulla gittiin otimme ssh-avaimen komentokehotteesta ja liitimme sen githubiin
+
+`ssh-keygen`
+
+`cat /.ssh/id_ed25519.pub` (public tärkeä sillä se on julkinen avain)
+
+- Tämän jälkeen pääsimme yhdistämään projektirepoomme
+
+`git clone` komennolla
+
+
