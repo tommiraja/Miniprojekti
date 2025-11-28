@@ -2,9 +2,12 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  # Debian 12 boksi
-  config.vm.box = "debian/bookworm64"
+  config.vm.box = "ubuntu/bookworm64"
   config.vm.hostname = "DevausYmparisto"
+  config.vm.provision :salt do |salt|
+    salt.minion_config = "salt/minion"
+    salt.run_highstate = true
+  end
 
   # Halutessasi web-demoa varten:
   config.vm.network "forwarded_port",
@@ -23,20 +26,23 @@ Vagrant.configure("2") do |config|
 
   # Asenna Salt ja aja teidän top.sls automaattisesti
   config.vm.provision "shell", inline: <<-SHELL
-    set -e
-    export DEBIAN_FRONTEND=noninteractive
+  set -e
+  export DEBIAN_FRONTEND=noninteractive
 
-    # Asenna salt-minion jos puuttuu
-    if ! command -v salt-call >/dev/null 2>&1; then
-      echo "==> Installing salt-minion..."
-      apt-get update
-      apt-get install -y salt-minion
-      # käytetään masterless-tilaa
-      sed -i '/^master:/d' /etc/salt/minion || true
-      grep -q '^file_client:' /etc/salt/minion || echo 'file_client: local' >> /etc/salt/minion
-    fi
+  echo "==> Päivitetään pakettilista ja asennetaan päivitykset..."
+  apt-get update
+  apt-get -y upgrade
 
-    echo "==> Running Salt from /srv/salt/top.sls ..."
-    salt-call --local --file-root=/srv/salt state.apply
-  SHELL
+  # Asenna salt-minion jos puuttuu
+  if ! command -v salt-call >/dev/null 2>&1; then
+    echo "==> Installing salt-minion..."
+    apt-get install -y salt-minion
+    sed -i '/^master:/d' /etc/salt/minion || true
+    grep -q '^file_client:' /etc/salt/minion || echo 'file_client: local' >> /etc/salt/minion
+  fi
+
+  echo "==> Running Salt from /srv/salt/top.sls ..."
+  salt-call --local --file-root=/srv/salt state.apply
+SHELL
 end
+
