@@ -23,21 +23,24 @@ Vagrant.configure("2") do |config|
 	end
 
 	config.vm.define "tmaster", primary: true do |tmaster|
-		tmaster.vm.provider "virtualbox" do |vb|
+	  tmaster.vm.provider "virtualbox" do |vb|
     	 vb.memory = "2048"
 		 vb.cpus = "2"
-	end
+	  end
 
 	config.vm.synced_folder "../srv/salt", "/srv/salt" 
-		tmaster.vm.provision :shell, inline: $master
-		tmaster.vm.network "private_network", ip: "192.168.12.3"
-		tmaster.vm.hostname = "tmaster"
+
+
+	tmaster.vm.provision :shell, inline: $master
+
+
+	tmaster.vm.network "private_network", ip: "192.168.12.3"
+	tmaster.vm.hostname = "tmaster"
 
 	config.vm.provision "shell", inline: <<-SHELL
 		set -e
 		echo "==> Running Salt highstate source /srv/salt/top.sls..."
 		salt-call --local --file-root=/srv/salt state.apply
 	SHELL
-
+	end
 end
-
