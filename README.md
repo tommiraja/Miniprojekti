@@ -91,3 +91,12 @@ Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
 `git clone` komennolla
 
 
+
+## Lähteet
+
+Palvelinten hallinta: https://terokarvinen.com/palvelinten-hallinta/
+
+Salt Vagrant: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
+
+
+
