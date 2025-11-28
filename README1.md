@@ -1,4 +1,4 @@
-# Patrick Raportti
+# Patrickin konfigurointia
 
 ## Salt tiedostot
 
