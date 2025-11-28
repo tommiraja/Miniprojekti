@@ -70,6 +70,17 @@ Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 <img width="913" height="352" alt="image" src="https://github.com/user-attachments/assets/9d2e3cf2-4b57-4c9d-9685-b917d0aec792" />
 
+- Eli tiedostot nyt sisältävät
+
+`eka` = Varmistaa että kaikki sovellus paketit ladataan (python, wget, curl, vim)
+
+`toka` = Asentaa SSH-palvelimen, käynnistää ja asettaa sen käynnistymään automaattisesti
+
+`kolmas` = Asentaa helppokäyttöisen palomuurin, mutta ei ota sitä vielä käyttöön 
+
+`neljäs` = Varmistaa että apache2 paketti on asennettuna 
+
+
 - Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto
 
 <img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
