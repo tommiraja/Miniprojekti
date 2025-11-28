@@ -37,6 +37,6 @@ Vagrant.configure("2") do |config|
 		set -e
 		echo "==> Running Salt highstate source /srv/salt/top.sls..."
 		salt-call --local --file-root=/srv/salt state.apply
-	SHELL	
-	end
+	SHELL
+
 end
