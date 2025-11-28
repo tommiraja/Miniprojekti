@@ -9,6 +9,5 @@ python_tools:
       - python3-pip
 
 update-system:
-  cmd.run:
-    - name: apt-get update && apt-get -y upgrade
-    - unless: test -f /var/lib/apt/periodic/update-success-stamp
+  pkg.uptodate:
+    - refresh: True
