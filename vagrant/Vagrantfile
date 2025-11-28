@@ -1,15 +1,9 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
 Vagrant.configure("2") do |config|
+  # Virtuaalikoneen image
   config.vm.box = "debian/bookworm64"
   config.vm.hostname = "DevausYmparisto"
-  config.vm.provision :salt do |salt|
-    salt.minion_config = "salt/minion"
-    salt.run_highstate = true
-  end
 
-  # Halutessasi web-demoa varten:
+  # (Valinnainen, mutta kiva demoille: Apache/nginx -> http://localhost:8080)
   config.vm.network "forwarded_port",
                     guest: 80,
                     host: 8080,
@@ -21,29 +15,35 @@ Vagrant.configure("2") do |config|
     vb.cpus   = 2
   end
 
-  # Vagrantfile on kansiossa vagrant/, salt-kansio on ../srv/salt
+  # Vagrantfile on kansiossa vagrant/, Salt-statet ovat ../srv/salt
   config.vm.synced_folder "../srv/salt", "/srv/salt"
 
-  # Asenna Salt ja aja teidän top.sls automaattisesti
+  # Provisionointi: Debian päivitykset + salt-minion + masterless-konffi + top.sls ajo
   config.vm.provision "shell", inline: <<-SHELL
-  set -e
-  export DEBIAN_FRONTEND=noninteractive
+    set -e
+    export DEBIAN_FRONTEND=noninteractive
 
-  echo "==> Päivitetään pakettilista ja asennetaan päivitykset..."
-  apt-get update
-  apt-get -y upgrade
+    echo "==> Päivitetään pakettilista ja asennetaan päivitykset..."
+    apt-get update
+    apt-get -y upgrade
 
-  # Asenna salt-minion jos puuttuu
-  if ! command -v salt-call >/dev/null 2>&1; then
-    echo "==> Installing salt-minion..."
-    apt-get install -y salt-minion
+    # Asenna salt-minion jos puuttuu
+    if ! command -v salt-call >/dev/null 2>&1; then
+      echo "==> Installing salt-minion..."
+      apt-get install -y salt-minion
+    fi
+
+    # Konfiguroidaan masterless-tila: ei masteria, file_client local
     sed -i '/^master:/d' /etc/salt/minion || true
-    grep -q '^file_client:' /etc/salt/minion || echo 'file_client: local' >> /etc/salt/minion
-  fi
+    if ! grep -q '^file_client:' /etc/salt/minion; then
+      echo 'file_client: local' >> /etc/salt/minion
+    fi
 
-  echo "==> Running Salt from /srv/salt/top.sls ..."
-  salt-call --local --file-root=/srv/salt state.apply
-SHELL
+    # Varmistetaan että salt-minion -daemon on käynnissä ja käynnistyy bootissa
+    systemctl enable salt-minion
+    systemctl restart salt-minion
+
+    echo "==> Running Salt from /srv/salt/top.sls ..."
+    salt-call --local --file-root=/srv/salt state.apply
+  SHELL
 end
-
-
