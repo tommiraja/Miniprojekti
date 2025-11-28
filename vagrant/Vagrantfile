@@ -1,46 +1,42 @@
-$minion = <<MINION
-sudo apt-get update
-sudo apt-get -qy install salt-minion
-echo "master: 192.168.12.3">/etc/salt/minion
-sudo service salt-minion restart
-echo "See also: https://terokarvinen.com/2023/salt-vagrant/"
-MINION
-
-$master = <<MASTER
-sudo apt-get update
-sudo apt-get -qy install salt-master
-echo "See also: https://terokarvinen.com/2023/salt-vagrant/"
-MASTER
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "debian/bookworm64"
-	config.vm.hostname = "DevausYmparisto"
+  # Debian 12 boksi
+  config.vm.box = "debian/bookworm64"
+  config.vm.hostname = "DevausYmparisto"
 
-	config.vm.define "t001" do |t001|
-		t001.vm.provision :shell, inline: $minion
-		t001.vm.network "private_network", ip: "192.168.12.100"
-		t001.vm.hostname = "t001"
-	end
+  # Halutessasi web-demoa varten:
+  config.vm.network "forwarded_port",
+                    guest: 80,
+                    host: 8080,
+                    auto_correct: true
 
-	config.vm.define "tmaster", primary: true do |tmaster|
-	  tmaster.vm.provider "virtualbox" do |vb|
-    	 vb.memory = "2048"
-		 vb.cpus = "2"
-	  end
+  # Resurssit
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 2048   # 2 Gt RAM
+    vb.cpus   = 2
+  end
 
-	config.vm.synced_folder "../srv/salt", "/srv/salt" 
+  # Vagrantfile on kansiossa vagrant/, salt-kansio on ../srv/salt
+  config.vm.synced_folder "../srv/salt", "/srv/salt"
 
+  # Asenna Salt ja aja teidän top.sls automaattisesti
+  config.vm.provision "shell", inline: <<-SHELL
+    set -e
+    export DEBIAN_FRONTEND=noninteractive
 
-	tmaster.vm.provision :shell, inline: $master
+    # Asenna salt-minion jos puuttuu
+    if ! command -v salt-call >/dev/null 2>&1; then
+      echo "==> Installing salt-minion..."
+      apt-get update
+      apt-get install -y salt-minion
+      # käytetään masterless-tilaa
+      sed -i '/^master:/d' /etc/salt/minion || true
+      grep -q '^file_client:' /etc/salt/minion || echo 'file_client: local' >> /etc/salt/minion
+    fi
 
-
-	tmaster.vm.network "private_network", ip: "192.168.12.3"
-	tmaster.vm.hostname = "tmaster"
-
-	config.vm.provision "shell", inline: <<-SHELL
-		set -e
-		echo "==> Running Salt highstate source /srv/salt/top.sls..."
-		salt-call --local --file-root=/srv/salt state.apply
-	SHELL
-	end
+    echo "==> Running Salt from /srv/salt/top.sls ..."
+    salt-call --local --file-root=/srv/salt state.apply
+  SHELL
 end
