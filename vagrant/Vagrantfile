@@ -1,0 +1,42 @@
+$minion = <<MINION
+sudo apt-get update
+sudo apt-get -qy install salt-minion
+echo "master: 192.168.12.3">/etc/salt/minion
+sudo service salt-minion restart
+echo "See also: https://terokarvinen.com/2023/salt-vagrant/"
+MINION
+
+$master = <<MASTER
+sudo apt-get update
+sudo apt-get -qy install salt-master
+echo "See also: https://terokarvinen.com/2023/salt-vagrant/"
+MASTER
+
+Vagrant.configure("2") do |config|
+	config.vm.box = "debian/bookworm64"
+	config.vm.hostname = "DevausYmparisto"
+
+	config.vm.define "t001" do |t001|
+		t001.vm.provision :shell, inline: $minion
+		t001.vm.network "private_network", ip: "192.168.12.100"
+		t001.vm.hostname = "t001"
+	end
+
+	config.vm.define "tmaster", primary: true do |tmaster|
+		tmaster.vm.provider "virtualbox" do |vb|
+    	 vb.memory = "2048"
+		 vb.cpus = "2"
+	end
+
+	config.vm.synced_folder "srv/salt", "/srv/salt" 
+		tmaster.vm.provision :shell, inline: $master
+		tmaster.vm.network "private_network", ip: "192.168.12.3"
+		tmaster.vm.hostname = "tmaster"
+
+	config.vm.provision "shell", inline: <<-SHELL
+		set -e
+		echo "==> Running Salt highstate source /srv/salt/top.sls..."
+		salt-call --local --file-root=/srv/salt state.apply
+	SHELL	
+	end
+end
