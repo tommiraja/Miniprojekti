@@ -117,6 +117,8 @@ Kun pääsimme devausympäristöön tarkistimme onko paketit valmiina ladattu
 
 Tuloste oli suoraan idempotenssilla, sillä paketit latautuivat kun vagrant up komento oli ajettu.
 
+Kuitenkin virhe komentoja tuli näkyviin tulosteiden yläreunassa, jotka tarkoittivat että paketit olivat vanhentunemassa mutta saltin jotkut moduulit vielä käyttävät sitä. 
+
 ## Lähteet
 
 Palvelinten hallinta: https://terokarvinen.com/palvelinten-hallinta/
