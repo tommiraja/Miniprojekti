@@ -56,3 +56,27 @@ Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedos
 tulosteesta vielä huomaa että tuloste on idempotenssi
 
 
+ensi
+
+<img width="276" height="275" alt="image" src="https://github.com/user-attachments/assets/fb9950e5-2454-43ba-9c0c-4ea515ddf953" />
+
+toka
+
+<img width="302" height="197" alt="image" src="https://github.com/user-attachments/assets/6083d36c-b769-4bfe-b31e-91cceaadf46c" />
+
+kolmas
+
+<img width="243" height="75" alt="image" src="https://github.com/user-attachments/assets/e646603b-4ecc-453f-8146-4cd5ec901b30" />
+
+neljäs
+
+<img width="245" height="76" alt="image" src="https://github.com/user-attachments/assets/a120f057-3f26-4089-803c-07d922d05950" />
+
+toppi
+
+<img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
+
+
+
+
+
