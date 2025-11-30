@@ -4,14 +4,7 @@
 
 Patrick ja Tommi toteuttivat projektin, jonka tavoitteena oli rakentaa devauspalvelin, joka käynnistyy käyttövalmiiksi yhdellä komennolla: vagrant up. Ratkaisu automatisoi koko ympäristön pystytyksen ja soveltuu työelämän tilanteisiin, joissa tarvitaan nopeasti toistettavia kehitys‑ ja testausympäristöjä.
 
-Projektin idea ja tavoitteet
-Automatisoida kehityspalvelimen asennus ja konfigurointi.
-
-Välttää manuaalinen työ ja virheherkät toistot.
-
-Toteuttaa “Infra as Code” käyttäen Vagrantia + Saltia (masterless).
-
-Rakentaa yksinkertainen mutta toimiva kokonaisuus, jota voi laajentaa.
+Projektin tavoitteena on automatisoida kehityspalvelimen asennus ja konfigurointi, jotta manuaalista työtä ja virheille alttiita toistuvia vaiheita voidaan vähentää. Ratkaisu toteutetaan Infrastructure as Code -periaatteella hyödyntäen Vagrantia ja masterless-tilassa toimivaa Saltia. Tarkoituksena on rakentaa yksinkertainen mutta toimiva kokonaisuus, jota voidaan helposti laajentaa ja kehittää jatkossa..
 
 
 ## Ympäristö
