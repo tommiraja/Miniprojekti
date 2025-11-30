@@ -139,17 +139,24 @@ Lopuksi oli vielä tärkeä committaa muutokset githubiin.
 
 ## Vagrant-filen konfigurointia 28.11.2025
 
-Tämän jälkeen teimme vagrant filen johon käytimme Teron antamia ohjeita: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
+Tarkoituksena konfiguroida vagrant-tiedostoa siten, että virtuaalikoneen käynnistyessä salt-minion asentuu ja määritellyt salt-tilat ajavat itsensä, jotta kaikki tarvittava on valmiiksi asennettuna ympäristössä. Vagrantfileä konfiguroidessa on otettava huomioon, että `curl` komento asennetaan, tehdään `keyrings` tiedosto avaimille ja liitetään GPG-avaimet Vagrantfileen.
+
+Aluksi teimme vagrant filen johon käytimme Teron antamia ohjeita: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
+    - Lisäsimme muistia 2048 mb, sekä asetettiin prosessorimääräksi 2, tällä varmistamme että ympäristömme toimii                 moitteetta.
 
 Liitimme valmiin tiedosto pohjan vagrant tiedostoon ja lisäsimme meidän tekemän top.sls tiedoston polun.
 
 Vagrantfileä tehdessä käytimme teron ohjeita joita löysimme täältä https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ mutta tarvitsimme myös tekoälyn käyttöä vagrantfile:lle koska yritimme alkuun ajaa teron versioita mutta emme saaneet saltia toimimaan koska se ei asentunut automaattisesti käynnistyksen yhteydessä. (APT ei löytänyt salt pakettia)
+RATKAISU: 
+    - Määritetään vagrant-tiedostoon boostrap skripti:
+    
+    <img width="1336" height="877" alt="image" src="https://github.com/user-attachments/assets/e4736ca6-c659-4cbd-b01c-2a0946e37e9b" />
 
 Täältä löysimme apua boot-strap skriptiin jota käytimme vagrantfilessämme: https://smrtalek.medium.com/setup-for-a-saltstack-vagrant-environment-c5b720010e4c
 
-Jotta pystyimme liittymään vagrantin avulla gittiin otimme ssh-avaimen komentokehotteesta ja liitimme sen githubiin.
+Jotta pystyimme liittymään Powershell:in avulla gittiin otimme ssh-avaimen komentokehotteesta ja liitimme sen githubiin `profile` -> `settings` -> `SSH and PGP-keys`.
 
-Käytimme avainten lisäämiseen Teron ohjeita jotka löysimme täältä: Install Salt https://terokarvinen.com/install-salt-on-debian-13-trixie/
+Vagrant fileä konfiguroidessa käytimme Saltin GPG-avainten lisäämiseen Teron ohjeita jotka löysimme täältä: Install Salt https://terokarvinen.com/install-salt-on-debian-13-trixie/
 
 `ssh-keygen`
 
@@ -160,6 +167,7 @@ Tämän jälkeen pääsimme yhdistämään projektirepoomme.
 `git clone` komennolla
 
 Kokeilimme vielä Patrickin powershell ympäristössä saimmeko vagrantin ssh yhteydellä Miniprojektin toimimaan tähän siis käytimme komentoja.
+    - Tommin koneella joutui miniona potkaisemaan aluksi käyntiin `sudo systemctl restart salt-minion` komennolla, sillä salt-minionin tila oli jostain syystä "failed".
 
 `cd /Miniprojekti/vagrant`
 
@@ -173,7 +181,7 @@ Kun pääsimme devausympäristöön tarkistimme onko paketit valmiina ladattu.
 
 <img width="578" height="1005" alt="image" src="https://github.com/user-attachments/assets/5d5201d1-4118-42b7-9522-7599960aea55" />
 
-Tuloste oli suoraan idempotenssilla, sillä paketit latautuivat kun vagrant up komento oli ajettu.
+Tuloste oli suoraan idempotenssilla, sillä paketit latautuivat kun vagrant up komento oli ajettu, jolloin virtuaalikoneen käynnistymisen yhteydessä asentui kaikki tarvittava (salt ja devauspalvelimen komponentit).
 
 Kuitenkin virhe komentoja tuli näkyviin tulosteiden yläreunassa, jotka tarkoittivat että paketit olivat vanhentunemassa mutta saltin jotkut moduulit vielä käyttävät sitä. 
 
