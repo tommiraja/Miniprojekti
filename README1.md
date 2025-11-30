@@ -1,72 +1,81 @@
-# Patrickin konfigurointia
+Yhteenveto: Kehityspalvelin yhdellä komennolla (Vagrant + Salt masterless)
+Patrick ja Tommi toteuttivat projektin, jonka tavoitteena oli rakentaa devauspalvelin, joka käynnistyy käyttövalmiiksi yhdellä komennolla: vagrant up. Ratkaisu automatisoi koko ympäristön pystytyksen ja soveltuu työelämän tilanteisiin, joissa tarvitaan nopeasti toistettavia kehitys‑ ja testausympäristöjä.
 
-## Salt tiedostot
+Projektin idea ja tavoitteet
+Automatisoida kehityspalvelimen asennus ja konfigurointi.
 
-Aloitin projektin kloonaamalla Tommin github sivun SSH: osoitteen jonka annoin komennoksi virtuaalikoneelleni
+Välttää manuaalinen työ ja virheherkät toistot.
 
-`git clone git@github.com:tommiraja/Miniprojekti.git`
+Toteuttaa “Infra as Code” käyttäen Vagrantia + Saltia (masterless).
 
-Sen jälkeen vaihdoin vielä varmuuden vuoksi koneen ajan oikeaan 
+Rakentaa yksinkertainen mutta toimiva kokonaisuus, jota voi laajentaa.
 
-`sudo timedatectl set-time`
+Ympäristö
+Työ tehtiin Windows 11 Home + PowerShell -ympäristöissä.
 
-`sudo apt-get update`
+Virtuaalikoneena Debian 13 Trixie.
 
-Kun olin saanut nämä tehtyä kokeilin sainko muutoksia aikaan yhteisellä Github sivustollamme muokkaamalla README.md tiedostoa
-Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
+Yhteistyö: projektin repositorio GitHubissa ja kommunikointi Discordissa.
 
-`sudo nano README.md`
+Työvaiheet
+1. GitHub-repositorion valmistelu
+Luotiin yhteinen repo ja lisättiin:
 
-`git add .`
+README.md
 
-`git commit`
+GNU GPLv3 -lisenssi
 
-`git pull`
+Salt-tiedostot
 
-`git push`
+Kloonaus SSH-avainparilla.
 
-Vola! tiedostoon oli tullut muutos!
+Testattiin muutoksien toimiva synkronointi: git add, commit, push, pull.
 
-Tämän jälkeen aloin lisäämään init.sls tiedostoja saltin avulla
+2. Salt-kansiorakenne
+Luotiin kansio srv/salt/ ja sen alle ympäristön tilat:
 
-`mkdir -p /Miniprojekti/srv/salt/eka`
+Kansio	Tarkoitus
+eka/	Sovelluspakettien asennus (python, wget, curl, vim jne.)
+toka/	SSH-palvelimen asennus ja käynnistys
+kolmas/	UFW-palomuurin asennus
+neljas/	Apache2-asennus
+top.sls	Määrittelee kaikkien yllä olevien tilojen soveltamisen
+Salt ajettiin virtuaalikoneessa komennolla:
 
-`mkdir -p /Miniprojekti/srv/salt/toka`
+sudo salt-call --local state.apply
+Tuloksena idempotenssi (ei muutettavaa), koska tilat toteutettiin jo Vagrantin kautta.
 
-`mkdir -p /Miniprojekti/srv/salt/kolmas`
+3. Vagrantfile
+Rakennettiin Vagrantfile, joka:
 
-`mkdir -p /Miniprojekti/srv/salt/neljäs`
+Lataa Debianin (debian/bullseye64).
 
-Näihin kansioihin lisään palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n 
+Synkronoi Saltin tilat VM:ään.
 
-Näiden jälkeen tein jo valmiiksi top.sls tiedoston 
+Asentaa Salt-minionin käyttäen Broadcomin virallista repo‑asennusta.
 
-`mkdir -p /Miniprojekti/srv/salt/top.sls`
+Poistaa master‑konfiguraation ja vaihtaa tilaan file_client: local.
 
-Sinne lisäsin kaikki init.sls tiedostot 
+Suorittaa Saltin automaattisesti (state.apply) käynnistyksen yhteydessä.
 
-<img width="170" height="169" alt="image" src="https://github.com/user-attachments/assets/66f8f18c-ad81-4e1d-b7bf-1426190a5283" />
+Tämän ansiosta koko ympäristö asentuu täysin automaattisesti komennolla:
 
-<img width="913" height="352" alt="image" src="https://github.com/user-attachments/assets/9d2e3cf2-4b57-4c9d-9685-b917d0aec792" />
+vagrant up
+4. Testaus
+Molemmat ajoivat projektin omissa ympäristöissään.
 
-Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto
+Vagrant & Salt automatisoivat kaiken onnistuneesti.
 
-<img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
+Ainoa näkyvä huomio oli Saltin antamat varoitukset vanhenevista Python-moduuleista, jotka eivät vaikuta toimivuuteen.
 
-tulosteesta vielä huomaa että tuloste on idempotenssi
+Lopputulos
+Toimiva masterless‑Salt + Vagrant -kehityspalvelin.
 
+Täysin idempotentti ympäristö.
 
+Yhden komennon käyttöönotto.
 
-
-
-
-
-
-
-
-
-
-<img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
+Selkeä ja laajennettavissa oleva rakenne.
 
 
 Käytimme avainten lisäämiseen Teron ohjeita jotka löysimme täältä: Install Salt https://terokarvinen.com/install-salt-on-debian-13-trixie/
