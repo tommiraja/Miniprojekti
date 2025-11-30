@@ -93,6 +93,8 @@ Käytimme myös lähteinä tunneilta opiskeltuja asioita, joita olimme ottaneet 
 
 Chat gpt promptit 
 - Miten saamme ladattua saltin, sillein että käynnistyksen yhteydessä ei tule unable to locate package: salt-minion
+- Mitkä olisivat ominaisia init.sls tiedostoja valmiille palvelinympäristölle?
+- 
 - 
 
 
