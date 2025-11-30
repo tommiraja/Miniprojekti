@@ -49,7 +49,6 @@ Yhteistyö: projektin repositorio GitHubissa ja kommunikointi Discordissa.
 - Lataa Debianin (debian/bullseye64).
 - Synkronoi Saltin tilat VM:ään.
 - Asentaa Salt-minionin käyttäen Broadcomin virallista repo‑asennusta.
-- Poistaa master‑konfiguraation ja vaihtaa tilaan file_client: local.
 - Suorittaa Saltin automaattisesti (state.apply) käynnistyksen yhteydessä.
 - Tämän ansiosta koko ympäristö asentuu täysin automaattisesti komennolla:
 
