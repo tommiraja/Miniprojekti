@@ -79,11 +79,13 @@ Tämän jälkeen aloimme lisäämään init.sls tiedostoja saltin avulla.
 
 Näihin kansioihin lisäsimme palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n. 
 
-Näiden jälkeen teimme jo valmiiksi top.sls tiedoston. 
+Sitten vielä teimme top.sls kansion
+
+Top fileen saimme apua täältä vaikka top file oli hyvin jo muistissa ennestään, mutta aina on hyvä tarkistaa https://docs.saltproject.io/en/latest/ref/states/top.html
 
 `mkdir -p /Miniprojekti/srv/salt/top.sls`
 
-Sinne lisäsimme kaikki init.sls tiedostot.
+Loimme kansiot jotka sisälsivät init.sls tiedostot top fileen johon käytimme Teron antamia ohjeita täältä: http://terokarvinen.com/2024/hello-salt-infra-as-code/
 
 Tältä näytti nyt tekemämme srv/salt kansio Githubissa:
 
@@ -141,7 +143,13 @@ Tämän jälkeen teimme vagrant filen johon käytimme Teron antamia ohjeita: htt
 
 Liitimme valmiin tiedosto pohjan vagrant tiedostoon ja lisäsimme meidän tekemän top.sls tiedoston polun.
 
+Vagrantfileä tehdessä käytimme teron ohjeita joita löysimme täältä https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ mutta tarvitsimme myös tekoälyn käyttöä vagrantfile:lle koska yritimme alkuun ajaa teron versioita mutta emme saaneet saltia toimimaan koska se ei asentunut automaattisesti käynnistyksen yhteydessä. (APT ei löytänyt salt pakettia)
+
+Täältä löysimme apua boot-strap skriptiin jota käytimme vagrantfilessämme: https://smrtalek.medium.com/setup-for-a-saltstack-vagrant-environment-c5b720010e4c
+
 Jotta pystyimme liittymään vagrantin avulla gittiin otimme ssh-avaimen komentokehotteesta ja liitimme sen githubiin.
+
+Käytimme avainten lisäämiseen Teron ohjeita jotka löysimme täältä: Install Salt https://terokarvinen.com/install-salt-on-debian-13-trixie/
 
 `ssh-keygen`
 
