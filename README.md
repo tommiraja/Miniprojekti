@@ -187,6 +187,8 @@ Tuloste oli suoraan idempotenssilla, sillä paketit latautuivat kun vagrant up k
 
 Kuitenkin virhe komentoja tuli näkyviin tulosteiden yläreunassa, jotka tarkoittivat että paketit olivat vanhentunemassa mutta saltin jotkut moduulit vielä käyttävät sitä. 
 
+Projekti onnistui mielestämme hyvin ja oli mukavaa päästä tekemään koodaritoverin kanssa yhteistä projektia! Aikaa tähän kului noin 15h, teimme projektia kolmena eri päivänä.
+
 ## Lähteet
 
 Palvelinten hallinta: https://terokarvinen.com/palvelinten-hallinta/
