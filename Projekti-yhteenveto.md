@@ -1,6 +1,6 @@
 # Yhteenveto kehityspalvelin yhdellä komennolla 
 
-(Täältä pääset lukemaan kokonaisen raportin: https://github.com/tommiraja/Miniprojekti/blob/d0c35fdbc992469dec2cbd411e2d78af4e04bc7c/README.md)
+Täältä pääset lukemaan kokonaisen raportin: https://github.com/tommiraja/Miniprojekti/blob/92d007ec594b3a6fea2079dada8f8f01d1fce49f/projekti-kokonaan.md
 
 Patrick ja Tommi toteuttivat projektin, jonka tavoitteena oli rakentaa devauspalvelin, joka käynnistyy käyttövalmiiksi yhdellä komennolla: vagrant up. Ratkaisu automatisoi koko ympäristön pystytyksen ja soveltuu työelämän tilanteisiin, joissa tarvitaan nopeasti toistettavia kehitys‑ ja testausympäristöjä.
 
