@@ -17,10 +17,7 @@
 
 - Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme
 
-
-<img width="520" height="281" alt="image" src="https://github.com/user-attachments/assets/7c58e49a-3d26-4522-83f6-8e20af1b80b5" />
-
-## Patrickin konfigurointia yhdessä pohdiskellen
+## Konfigurointia yhdessä pohdiskellen
 
 ### Salt tiedostot
 
@@ -144,6 +141,24 @@ Kuitenkin virhe komentoja tuli näkyviin tulosteiden yläreunassa, jotka tarkoit
 Palvelinten hallinta: https://terokarvinen.com/palvelinten-hallinta/
 
 Salt Vagrant: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
+
+https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/
+
+https://smrtalek.medium.com/setup-for-a-saltstack-vagrant-environment-c5b720010e4c
+
+https://docs.saltproject.io/en/latest/ref/states/top.html
+
+http://terokarvinen.com/2024/hello-salt-infra-as-code/
+
+Raportin kirjoittaminen: https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/
+
+https://terokarvinen.com/install-salt-on-debian-13-trixie/
+
+Käytimme myös lähteinä tunneilta opiskeltuja asioita, joita olimme ottaneet muistiinpanoiksi.
+
+Chat gpt promptit 
+- Miten saamme ladattua saltin, sillein että käynnistyksen yhteydessä ei tule unable to locate package: salt-minion
+- Mitkä olisivat ominaisia init.sls tiedostoja valmiille palvelinympäristölle?
 
 
 
