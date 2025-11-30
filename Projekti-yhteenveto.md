@@ -48,6 +48,9 @@ Projektin tavoitteena on automatisoida kehityspalvelimen asennus ja konfiguroint
 - Molemmat ajoivat projektin omissa ympäristöissään.
 - Vagrant & Salt automatisoivat kaiken onnistuneesti.
 - Ainoa näkyvä huomio oli Saltin antamat varoitukset vanhenevista Python-moduuleista, jotka eivät vaikuta toimivuuteen.
+- Tommin koneella joutui potkaisemaan minionin käyntiin
+
+Video testauksesta: https://www.youtube.com/watch?v=fLX38D2xbRM
   
 ## Lopputulos
 
