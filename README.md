@@ -87,7 +87,7 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 <img width="913" height="352" alt="image" src="https://github.com/user-attachments/assets/9d2e3cf2-4b57-4c9d-9685-b917d0aec792" />
 
-- Eli tiedostot nyt sisältävät:
+- Tiedostot nyt sisälsivät:
 
 `eka` 
 
@@ -113,7 +113,7 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 = Varmistaa että apache2 paketti on asennettuna. 
 
-Tässä vielä yhteenvetona toppi filessä:
+- Tässä vielä yhteenvetona toppi filessä:
 
 <img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
 
@@ -122,6 +122,16 @@ Tässä vielä yhteenvetona toppi filessä:
 `sudo salt-call --local state.apply`
 
 <img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
+
+- Lopuksi oli vielä tärkeä committaa muutokset githubiin.
+
+`git add .`
+
+`git commit`
+
+`git pull`
+
+`git push`
 
 ## Vagrant-filen konfigurointia 28.11.2025
 
