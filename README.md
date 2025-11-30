@@ -146,6 +146,8 @@ Aluksi teimme vagrant filen johon käytimme Teron antamia ohjeita: https://terok
 
 Liitimme valmiin tiedosto pohjan vagrant tiedostoon ja lisäsimme meidän tekemän top.sls tiedoston polun.
 
+<img width="597" height="373" alt="image" src="https://github.com/user-attachments/assets/bea538f4-fedb-4fcd-83d0-7d4d4b663b27" />
+
 Vagrantfileä tehdessä käytimme teron ohjeita joita löysimme täältä https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ mutta tarvitsimme myös tekoälyn käyttöä vagrantfile:lle koska yritimme alkuun ajaa teron versioita mutta emme saaneet saltia toimimaan koska se ei asentunut automaattisesti käynnistyksen yhteydessä. (APT ei löytänyt salt pakettia)
 RATKAISU: 
     - Määritetään vagrant-tiedostoon boostrap skripti:
