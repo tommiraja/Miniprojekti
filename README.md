@@ -14,13 +14,13 @@
 # Ympäristön kuvaus
 - Toteutamme työn kotikoneiltamme Windows 11 Home PowerShellin kautta Vagrantilla, sekä Debian 13 Trixie virtuaalikoneympäristössä.
 
-Tässä vielä kuva Debian13 ympäristön ominaisuuksista.
+- Tässä vielä kuva Debian13 ympäristön ominaisuuksista.
 
 <img width="513" height="386" alt="image" src="https://github.com/user-attachments/assets/bf6225dd-5945-4b51-9b37-0d5c6e460784" />
 
-Kommunikointiin käytimme Discord palvelua, jossa olimme aina kun työstimme projektia.
+- Kommunikointiin käytimme Discord palvelua, jossa olimme aina kun työstimme projektia.
 
-# Alkuvalmistelut - Yhdessä työskentely 27.11.2025
+## Alkuvalmistelut - Yhdessä työskentely 27.11.2025
 
 - Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme.
 
