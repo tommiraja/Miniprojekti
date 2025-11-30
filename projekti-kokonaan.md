@@ -1,5 +1,8 @@
 # Kehityspalvelin yhden napin painalluksella!
 
+Täältä löydät linkin yhteenvetoon:
+https://github.com/tommiraja/Miniprojekti/blob/c2fb44088df6b13e50ccf66c034aa78d23aca7b9/Projekti-yhteenveto.md
+
 - Yhdistimme Patrickin kanssa aivomme ja noin puolentunnin aiheen miettimisen jälkeen päädyimme luomaan devaus-palvelinta, jonka saa käyttöön yhdellä napin painalluksella tai tarkemmin `vagrant up` komennolla.
 
 - Devauspalvelin tulee sisältämään sille ominaiset komponentit:
