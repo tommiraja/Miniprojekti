@@ -24,11 +24,11 @@
 
 ### Salt tiedostot
 
-- Aloitin projektin kloonaamalla Tommin github sivun SSH: osoitteen jonka annoin komennoksi virtuaalikoneelleni
+- Aloitimme projektin kloonaamalla Tommin github sivun SSH: osoitteen jonka annoimme komennoksi virtuaalikoneelle
 
 `git clone git@github.com:tommiraja/Miniprojekti.git`
 
- - Sen jälkeen vaihdoin vielä varmuuden vuoksi koneen ajan oikeaan 
+ - Sen jälkeen vaihdoimme vielä varmuuden vuoksi koneen ajan oikeaan 
 
 `sudo timedatectl set-time`
 
