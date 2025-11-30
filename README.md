@@ -150,7 +150,7 @@ Vagrantfileä tehdessä käytimme teron ohjeita joita löysimme täältä https:
 RATKAISU: 
     - Määritetään vagrant-tiedostoon boostrap skripti:
     
-    <img width="1336" height="877" alt="image" src="https://github.com/user-attachments/assets/e4736ca6-c659-4cbd-b01c-2a0946e37e9b" />
+<img width="1336" height="877" alt="image" src="https://github.com/user-attachments/assets/e4736ca6-c659-4cbd-b01c-2a0946e37e9b" />
 
 Täältä löysimme apua boot-strap skriptiin jota käytimme vagrantfilessämme: https://smrtalek.medium.com/setup-for-a-saltstack-vagrant-environment-c5b720010e4c
 
