@@ -9,11 +9,9 @@ Projektin tavoitteena on automatisoida kehityspalvelimen asennus ja konfiguroint
 
 ## Ympäristö
 
-Työ tehtiin Windows 11 Home + PowerShell -ympäristöissä.
-
-Virtuaalikoneena Debian 13 Trixie.
-
-Yhteistyö: projektin repositorio GitHubissa ja kommunikointi Discordissa.
+- Työ tehtiin Windows 11 Home + PowerShell -ympäristöissä.
+- Virtuaalikoneena Debian 13 Trixie.
+- Yhteistyö: projektin repositorio GitHubissa ja kommunikointi Discordissa.
 
 
 ## Työvaiheet
