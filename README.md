@@ -20,6 +20,13 @@
 
 - Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme
 
+- Varmistimme että reposotioon liitämme
+  - README:md
+  - GNU 3.0 Licence
+
+<img width="400" height="133" alt="image" src="https://github.com/user-attachments/assets/b33e8a3f-e9fd-44b6-9a8d-581dcc9cb898" />
+
+
 ## Konfigurointia yhdessä pohdiskellen
 
 ### Salt tiedostot
@@ -34,8 +41,8 @@
 
 `sudo apt-get update`
 
-- Kun olin saanut nämä tehtyä kokeilin sainko muutoksia aikaan yhteisellä Github sivustollamme muokkaamalla README.md tiedostoa
-Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
+- Kun olimme saaneet nämä tehtyä kokeilimme saammeko muutoksia aikaan yhteisellä Github sivustollamme muokkaamalla README.md tiedostoa
+Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 `sudo nano README.md`
 
@@ -49,7 +56,7 @@ Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 - Vola! tiedostoon oli tullut muutos!
 
-- Tämän jälkeen aloin lisäämään init.sls tiedostoja saltin avulla
+- Tämän jälkeen aloimme lisäämään init.sls tiedostoja saltin avulla
 
 `mkdir -p /Miniprojekti/srv/salt/eka`
 
@@ -59,13 +66,13 @@ Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 `mkdir -p /Miniprojekti/srv/salt/neljäs`
 
-- Näihin kansioihin lisään palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n 
+- Näihin kansioihin lisäsimme palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n 
 
-- Näiden jälkeen tein jo valmiiksi top.sls tiedoston 
+- Näiden jälkeen teimme jo valmiiksi top.sls tiedoston 
 
 `mkdir -p /Miniprojekti/srv/salt/top.sls`
 
-- Sinne lisäsin kaikki init.sls tiedostot 
+- Sinne lisäsimme kaikki init.sls tiedostot 
 
 <img width="170" height="169" alt="image" src="https://github.com/user-attachments/assets/66f8f18c-ad81-4e1d-b7bf-1426190a5283" />
 
@@ -101,7 +108,9 @@ Tässä vielä yhteenvetona toppi filessä:
 
 <img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
 
-- Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto virtuaalikoneen kautta
+- Teimme muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto virtuaalikoneen kautta
+
+`sudo salt-call --local state.apply`
 
 <img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
 
