@@ -11,26 +11,28 @@
 - Tässä siis ideana se, että manuaalisen asennuksen työ vältetään ja automatisoidaan devauspalvelimen käyttöönotto. Ideaalitilanne työelämässä, jossa devaustiimi tarvitsee mahdollisimman nopeasti ja yksinkertaisesti uusia testausympäristöjä käyttöönsä eri projekteissa. Pureudutaan syvemmälle aiheeseen!
 
 - Projektin tarkoituksena on soveltaa kurssilla opittuja asioita käytännönläheisesti ja mahdollisimman yksinkertaisella tavalla, sekä tehdä projektista helposti toteutettavan.
+  
 # Ympäristön kuvaus
-- Toteutamme työn kotikoneiltamme Windows 11 Home PowerShellin kautta Vagrantilla, sekä Debian 13 Trixie virtuaalikoneympäristössä.
 
-- Tässä vielä kuva Debian13 ympäristön ominaisuuksista.
+Toteutamme työn kotikoneiltamme Windows 11 Home PowerShellin kautta Vagrantilla, sekä Debian 13 Trixie virtuaalikoneympäristössä.
+
+ Tässä vielä kuva Debian13 ympäristön ominaisuuksista.
 
 <img width="513" height="386" alt="image" src="https://github.com/user-attachments/assets/bf6225dd-5945-4b51-9b37-0d5c6e460784" />
 
-- Kommunikointiin käytimme Discord palvelua, jossa olimme aina kun työstimme projektia.
+Kommunikointiin käytimme Discord palvelua, jossa olimme aina kun työstimme projektia.
 
 ## Alkuvalmistelut - Yhdessä työskentely 27.11.2025
 
-- Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme.
+Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme.
 
-- Varmistimme että reposotioon liitämme seuraavat asiat repositioon:
-  - README:md
-  - GNU 3.0 Licence
+Varmistimme että reposotioon liitämme seuraavat asiat repositioon:
+- README:md
+- GNU 3.0 Licence
  
 <img width="746" height="429" alt="image" src="https://github.com/user-attachments/assets/b5ffa365-f8fb-496c-be3f-c685c32ea521" />
 
-- Täältä löysimme kloonaamiseen suunnatun SSH osoitteen:
+Täältä löysimme kloonaamiseen suunnatun SSH osoitteen:
 
 <img width="400" height="133" alt="image" src="https://github.com/user-attachments/assets/b33e8a3f-e9fd-44b6-9a8d-581dcc9cb898" />
 
@@ -39,17 +41,17 @@
 
 ### Salt tiedostot
 
-- Aloitimme projektin kloonaamalla Tommin github sivun SSH: osoitteen jonka annoimme komennoksi virtuaalikoneelle.
+Aloitimme projektin kloonaamalla Tommin github sivun SSH: osoitteen jonka annoimme komennoksi virtuaalikoneelle.
 
 `git clone git@github.com:tommiraja/Miniprojekti.git`
 
- - Sen jälkeen vaihdoimme vielä varmuuden vuoksi koneen ajan oikeaan.
+Sen jälkeen vaihdoimme vielä varmuuden vuoksi koneen ajan oikeaan.
 
 `sudo timedatectl set-time`
 
 `sudo apt-get update`
 
-- Kun olimme saaneet nämä tehtyä kokeilimme saammeko muutoksia aikaan yhteisellä Github sivustollamme muokkaamalla README.md tiedostoa.
+Kun olimme saaneet nämä tehtyä kokeilimme saammeko muutoksia aikaan yhteisellä Github sivustollamme muokkaamalla README.md tiedostoa.
   
 Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
@@ -63,9 +65,9 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 `git push`
 
-- Vola! tiedostoon oli tullut muutos!
+Vola! tiedostoon oli tullut muutos!
 
-- Tämän jälkeen aloimme lisäämään init.sls tiedostoja saltin avulla.
+Tämän jälkeen aloimme lisäämään init.sls tiedostoja saltin avulla.
 
 `mkdir -p /Miniprojekti/srv/salt/eka`
 
@@ -75,19 +77,19 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 `mkdir -p /Miniprojekti/srv/salt/neljäs`
 
-- Näihin kansioihin lisäsimme palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n. 
+Näihin kansioihin lisäsimme palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n. 
 
-- Näiden jälkeen teimme jo valmiiksi top.sls tiedoston. 
+Näiden jälkeen teimme jo valmiiksi top.sls tiedoston. 
 
 `mkdir -p /Miniprojekti/srv/salt/top.sls`
 
-- Sinne lisäsimme kaikki init.sls tiedostot.
+Sinne lisäsimme kaikki init.sls tiedostot.
 
-- Tältä näytti nyt tekemämme srv/salt kansio Githubissa:
+Tältä näytti nyt tekemämme srv/salt kansio Githubissa:
 
 <img width="913" height="352" alt="image" src="https://github.com/user-attachments/assets/9d2e3cf2-4b57-4c9d-9685-b917d0aec792" />
 
-- Tiedostot nyt sisälsivät:
+Tiedostot nyt sisälsivät:
 
 `eka` 
 
@@ -113,17 +115,17 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 = Varmistaa että apache2 paketti on asennettuna. 
 
-- Tässä vielä yhteenvetona toppi filessä:
+Tässä vielä yhteenvetona toppi filessä:
 
 <img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
 
-- Teimme muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto virtuaalikoneen kautta.
+Teimme muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto virtuaalikoneen kautta.
 
 `sudo salt-call --local state.apply`
 
 <img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
 
-- Lopuksi oli vielä tärkeä committaa muutokset githubiin.
+Lopuksi oli vielä tärkeä committaa muutokset githubiin.
 
 `git add .`
 
@@ -135,17 +137,17 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 ## Vagrant-filen konfigurointia 28.11.2025
 
-- Tämän jälkeen teimme vagrant filen johon käytimme Teron antamia ohjeita: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
+Tämän jälkeen teimme vagrant filen johon käytimme Teron antamia ohjeita: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
 
-- Liitimme valmiin tiedosto pohjan vagrant tiedostoon ja lisäsimme meidän tekemän top.sls tiedoston polun.
+Liitimme valmiin tiedosto pohjan vagrant tiedostoon ja lisäsimme meidän tekemän top.sls tiedoston polun.
 
-- Jotta pystyimme liittymään vagrantin avulla gittiin otimme ssh-avaimen komentokehotteesta ja liitimme sen githubiin.
+Jotta pystyimme liittymään vagrantin avulla gittiin otimme ssh-avaimen komentokehotteesta ja liitimme sen githubiin.
 
 `ssh-keygen`
 
 `cat /.ssh/id_ed25519.pub` (public tärkeä sillä se on julkinen avain)
 
-- Tämän jälkeen pääsimme yhdistämään projektirepoomme.
+Tämän jälkeen pääsimme yhdistämään projektirepoomme.
 
 `git clone` komennolla
 
