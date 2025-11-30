@@ -77,6 +77,18 @@ toppi
 <img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
 
 
+Käytimme avainten lisäämiseen Teron ohjeita jotka löysimme täältä: Install Salt https://terokarvinen.com/install-salt-on-debian-13-trixie/
 
+Raportin kirjoittaminen: https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/
+
+Loimme kansiot top fileen johon käytimme Teron antamia ohjeita täältä: http://terokarvinen.com/2024/hello-salt-infra-as-code/
+
+top fileen saimme apua täältä vaikka top file oli hyvin jo muistissa ennestään, mutta aina on hyvä tarkistaa https://docs.saltproject.io/en/latest/ref/states/top.html
+
+Vagrantfileä tehdessä käytimme teron ohjeita joita löysimme täältä https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ mutta tarvitsimme myös tekoälyn käyttöä vagrantfile:lle koska yritimme alkuun ajaa teron versioita mutta emme saaneet saltia toimimaan koska se ei asentunut automaattisesti käynnistyksen yhteydessä. (APT ei löytänyt salt pakettia)
+
+Chat gpt promptit 
+- Miten saamme ladattua saltin, sillein että käynnistyksen yhteydessä ei tule unable to locate package: salt-minion
+- 
 
 
