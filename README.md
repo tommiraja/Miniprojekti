@@ -98,7 +98,7 @@ Tässä vielä yhteenvetona toppi filessä:
 
 <img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
 
-- Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto
+- Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto virtuaalikoneen kautta
 
 <img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
 
