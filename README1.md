@@ -56,30 +56,21 @@ Tein muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedos
 tulosteesta vielä huomaa että tuloste on idempotenssi
 
 
-eka
 
-<img width="276" height="275" alt="image" src="https://github.com/user-attachments/assets/fb9950e5-2454-43ba-9c0c-4ea515ddf953" />
 
-toka
 
-<img width="302" height="197" alt="image" src="https://github.com/user-attachments/assets/6083d36c-b769-4bfe-b31e-91cceaadf46c" />
 
-kolmas
 
-<img width="243" height="75" alt="image" src="https://github.com/user-attachments/assets/e646603b-4ecc-453f-8146-4cd5ec901b30" />
 
-neljäs
 
-<img width="245" height="76" alt="image" src="https://github.com/user-attachments/assets/a120f057-3f26-4089-803c-07d922d05950" />
 
-toppi file
+
 
 <img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
 
 
 Käytimme avainten lisäämiseen Teron ohjeita jotka löysimme täältä: Install Salt https://terokarvinen.com/install-salt-on-debian-13-trixie/
 
-Raportin kirjoittaminen: https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/
 
 Loimme kansiot top fileen johon käytimme Teron antamia ohjeita täältä: http://terokarvinen.com/2024/hello-salt-infra-as-code/
 
@@ -89,12 +80,6 @@ Vagrantfileä tehdessä käytimme teron ohjeita joita löysimme täältä https:
 
 Täältä löysimme apua boot-strap skriptiin jota käytimme vagrantfilessämme: https://smrtalek.medium.com/setup-for-a-saltstack-vagrant-environment-c5b720010e4c
 
-Käytimme myös lähteinä tunneilta opiskeltuja asioita, joita olimme ottaneet muistiinpanoiksi.
 
-Chat gpt promptit 
-- Miten saamme ladattua saltin, sillein että käynnistyksen yhteydessä ei tule unable to locate package: salt-minion
-- Mitkä olisivat ominaisia init.sls tiedostoja valmiille palvelinympäristölle?
-- 
-- 
 
 
