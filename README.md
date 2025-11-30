@@ -27,6 +27,10 @@ Kommunikointiin käytimme Discord palvelua, jossa olimme aina kun työstimme pro
 - Varmistimme että reposotioon liitämme seuraavat asiat repositioon:
   - README:md
   - GNU 3.0 Licence
+ 
+<img width="746" height="429" alt="image" src="https://github.com/user-attachments/assets/b5ffa365-f8fb-496c-be3f-c685c32ea521" />
+
+- Täältä löysimme kloonaamiseen suunnatun SSH osoitteen:
 
 <img width="400" height="133" alt="image" src="https://github.com/user-attachments/assets/b33e8a3f-e9fd-44b6-9a8d-581dcc9cb898" />
 
