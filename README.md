@@ -11,8 +11,9 @@
 - Tässä siis ideana se, että manuaalisen asennuksen työ vältetään ja automatisoidaan devauspalvelimen käyttöönotto. Ideaalitilanne työelämässä, jossa devaustiimi tarvitsee mahdollisimman nopeasti ja yksinkertaisesti uusia testausympäristöjä käyttöönsä eri projekteissa. Pureudutaan syvemmälle aiheeseen!
 
 - Projektin tarkoituksena on soveltaa kurssilla opittuja asioita käytännönläheisesti ja mahdollisimman yksinkertaisella tavalla, sekä tehdä projektista helposti toteutettavan.
-
-# Alkuvalmistelut - Yhdessä työskentely
+# Ympäristön kuvaus
+- Toteutamme työn kotikoneiltamme Windows 11 Home PowerShellin kautta Vagrantilla, sekä Debian 13 Trixie virtuaalikoneympäristössä.
+# Alkuvalmistelut - Yhdessä työskentely 27.11.2025
 
 - Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme
 
@@ -85,7 +86,7 @@ Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 <img width="538" height="696" alt="image" src="https://github.com/user-attachments/assets/fbaeac50-c0e8-4159-a8b3-1570c5e55cf5" />
 
-## Vagrant-filen konfigurointia
+## Vagrant-filen konfigurointia 28.11.2025
 
 - Tämän jälkeen teimme vagrant filen johon käytimme Teron antamia ohjeita: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
 
