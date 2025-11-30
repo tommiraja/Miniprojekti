@@ -14,15 +14,17 @@
 # Ympäristön kuvaus
 - Toteutamme työn kotikoneiltamme Windows 11 Home PowerShellin kautta Vagrantilla, sekä Debian 13 Trixie virtuaalikoneympäristössä.
 
-Tässä vielä kuva Debian13 ympäristön ominaisuuksista
+Tässä vielä kuva Debian13 ympäristön ominaisuuksista.
 
 <img width="513" height="386" alt="image" src="https://github.com/user-attachments/assets/bf6225dd-5945-4b51-9b37-0d5c6e460784" />
 
+Kommunikointiin käytimme Discord palvelua, jossa olimme aina kun työstimme projektia.
+
 # Alkuvalmistelut - Yhdessä työskentely 27.11.2025
 
-- Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme
+- Alkuun loimme yhdessä miniprojektin repon ja jaoimme sen toisillemme.
 
-- Varmistimme että reposotioon liitämme
+- Varmistimme että reposotioon liitämme seuraavat asiat repositioon:
   - README:md
   - GNU 3.0 Licence
 
@@ -33,17 +35,18 @@ Tässä vielä kuva Debian13 ympäristön ominaisuuksista
 
 ### Salt tiedostot
 
-- Aloitimme projektin kloonaamalla Tommin github sivun SSH: osoitteen jonka annoimme komennoksi virtuaalikoneelle
+- Aloitimme projektin kloonaamalla Tommin github sivun SSH: osoitteen jonka annoimme komennoksi virtuaalikoneelle.
 
 `git clone git@github.com:tommiraja/Miniprojekti.git`
 
- - Sen jälkeen vaihdoimme vielä varmuuden vuoksi koneen ajan oikeaan 
+ - Sen jälkeen vaihdoimme vielä varmuuden vuoksi koneen ajan oikeaan.
 
 `sudo timedatectl set-time`
 
 `sudo apt-get update`
 
-- Kun olimme saaneet nämä tehtyä kokeilimme saammeko muutoksia aikaan yhteisellä Github sivustollamme muokkaamalla README.md tiedostoa
+- Kun olimme saaneet nämä tehtyä kokeilimme saammeko muutoksia aikaan yhteisellä Github sivustollamme muokkaamalla README.md tiedostoa.
+  
 Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 `sudo nano README.md`
@@ -58,7 +61,7 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 - Vola! tiedostoon oli tullut muutos!
 
-- Tämän jälkeen aloimme lisäämään init.sls tiedostoja saltin avulla
+- Tämän jälkeen aloimme lisäämään init.sls tiedostoja saltin avulla.
 
 `mkdir -p /Miniprojekti/srv/salt/eka`
 
@@ -68,49 +71,49 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 `mkdir -p /Miniprojekti/srv/salt/neljäs`
 
-- Näihin kansioihin lisäsimme palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n 
+- Näihin kansioihin lisäsimme palomuurin, apachen, sovellusympäristön pythonilla sekä ssh:n. 
 
-- Näiden jälkeen teimme jo valmiiksi top.sls tiedoston 
+- Näiden jälkeen teimme jo valmiiksi top.sls tiedoston. 
 
 `mkdir -p /Miniprojekti/srv/salt/top.sls`
 
-- Sinne lisäsimme kaikki init.sls tiedostot 
+- Sinne lisäsimme kaikki init.sls tiedostot.
 
 <img width="170" height="169" alt="image" src="https://github.com/user-attachments/assets/66f8f18c-ad81-4e1d-b7bf-1426190a5283" />
 
 <img width="913" height="352" alt="image" src="https://github.com/user-attachments/assets/9d2e3cf2-4b57-4c9d-9685-b917d0aec792" />
 
-- Eli tiedostot nyt sisältävät
+- Eli tiedostot nyt sisältävät:
 
 `eka` 
 
 <img width="276" height="275" alt="image" src="https://github.com/user-attachments/assets/fb9950e5-2454-43ba-9c0c-4ea515ddf953" />
 
-= Varmistaa että kaikki sovellus paketit ladataan (python, wget, curl, vim)
+= Varmistaa että kaikki sovellus paketit ladataan (python, wget, curl, vim).
 
 `toka` 
 
 <img width="302" height="197" alt="image" src="https://github.com/user-attachments/assets/6083d36c-b769-4bfe-b31e-91cceaadf46c" />
 
-= Asentaa SSH-palvelimen, käynnistää ja asettaa sen käynnistymään automaattisesti
+= Asentaa SSH-palvelimen, käynnistää ja asettaa sen käynnistymään automaattisesti.
 
 `kolmas` 
 
 <img width="243" height="75" alt="image" src="https://github.com/user-attachments/assets/e646603b-4ecc-453f-8146-4cd5ec901b30" />
 
-= Asentaa helppokäyttöisen palomuurin, mutta ei ota sitä vielä käyttöön 
+= Asentaa helppokäyttöisen palomuurin, mutta ei ota sitä vielä käyttöön.
 
 `neljäs` 
 
 <img width="245" height="76" alt="image" src="https://github.com/user-attachments/assets/a120f057-3f26-4089-803c-07d922d05950" />
 
-= Varmistaa että apache2 paketti on asennettuna 
+= Varmistaa että apache2 paketti on asennettuna. 
 
 Tässä vielä yhteenvetona toppi filessä:
 
 <img width="203" height="138" alt="image" src="https://github.com/user-attachments/assets/642a3a34-0d5e-42eb-916c-a7d4d8c68972" />
 
-- Teimme muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto virtuaalikoneen kautta
+- Teimme muutokset kaikkiin init.sls tiedostoihin ja kokeilin toimiko top.sls tiedosto virtuaalikoneen kautta.
 
 `sudo salt-call --local state.apply`
 
@@ -120,19 +123,19 @@ Tässä vielä yhteenvetona toppi filessä:
 
 - Tämän jälkeen teimme vagrant filen johon käytimme Teron antamia ohjeita: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
 
-- Liitimme valmiin tiedosto pohjan vagrant tiedostoon ja lisäsimme meidän tekemän top.sls tiedoston polun
+- Liitimme valmiin tiedosto pohjan vagrant tiedostoon ja lisäsimme meidän tekemän top.sls tiedoston polun.
 
-- Jotta pystyimme liittymään vagrantin avulla gittiin otimme ssh-avaimen komentokehotteesta ja liitimme sen githubiin
+- Jotta pystyimme liittymään vagrantin avulla gittiin otimme ssh-avaimen komentokehotteesta ja liitimme sen githubiin.
 
 `ssh-keygen`
 
 `cat /.ssh/id_ed25519.pub` (public tärkeä sillä se on julkinen avain)
 
-- Tämän jälkeen pääsimme yhdistämään projektirepoomme
+- Tämän jälkeen pääsimme yhdistämään projektirepoomme.
 
 `git clone` komennolla
 
-Kokeilimme vielä Patrickin powershell ympäristössä saimmeko vagrantin ssh yhteydellä Miniprojektin toimimaan tähän siis käytimme komentoja
+Kokeilimme vielä Patrickin powershell ympäristössä saimmeko vagrantin ssh yhteydellä Miniprojektin toimimaan tähän siis käytimme komentoja.
 
 `cd /Miniprojekti/vagrant`
 
@@ -140,7 +143,7 @@ Kokeilimme vielä Patrickin powershell ympäristössä saimmeko vagrantin ssh yh
 
 `vagrant ssh`
 
-Kun pääsimme devausympäristöön tarkistimme onko paketit valmiina ladattu 
+Kun pääsimme devausympäristöön tarkistimme onko paketit valmiina ladattu.
 
 `sudo salt-call --local state.apply`
 
