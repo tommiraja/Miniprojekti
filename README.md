@@ -101,7 +101,21 @@ Sirryin ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 `git clone` komennolla
 
+Kokeilimme vielä Patrickin powershell ympäristössä saimmeko vagrantin ssh yhteydellä Miniprojektin toimimaan tähän siis käytimme komentoja
 
+`cd /Miniprojekti/vagrant`
+
+`vagrant up`
+
+`vagrant ssh`
+
+Kun pääsimme devausympäristöön tarkistimme onko paketit valmiina ladattu 
+
+`sudo salt-call --local state.apply`
+
+<img width="578" height="1005" alt="image" src="https://github.com/user-attachments/assets/5d5201d1-4118-42b7-9522-7599960aea55" />
+
+Tuloste oli suoraan idempotenssilla, sillä paketit latautuivat kun vagrant up komento oli ajettu.
 
 ## Lähteet
 
