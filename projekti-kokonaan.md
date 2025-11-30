@@ -192,6 +192,8 @@ Kuitenkin virhe komentoja tuli näkyviin tulosteiden yläreunassa, jotka tarkoit
 
 Projekti onnistui mielestämme hyvin ja oli mukavaa päästä tekemään koodaritoverin kanssa yhteistä projektia! Aikaa tähän kului noin 15h, teimme projektia kolmena eri päivänä.
 
+Projekti oli valmis 30.11.2025 klo 20:15
+
 ## Lähteet
 
 Palvelinten hallinta: https://terokarvinen.com/palvelinten-hallinta/
