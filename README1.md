@@ -1,4 +1,5 @@
-Yhteenveto: Kehityspalvelin yhdellä komennolla (Vagrant + Salt masterless)
+# Kehityspalvelin yhdellä komennolla (Vagrant + Salt masterless)
+
 Patrick ja Tommi toteuttivat projektin, jonka tavoitteena oli rakentaa devauspalvelin, joka käynnistyy käyttövalmiiksi yhdellä komennolla: vagrant up. Ratkaisu automatisoi koko ympäristön pystytyksen ja soveltuu työelämän tilanteisiin, joissa tarvitaan nopeasti toistettavia kehitys‑ ja testausympäristöjä.
 
 Projektin idea ja tavoitteet
@@ -10,14 +11,18 @@ Toteuttaa “Infra as Code” käyttäen Vagrantia + Saltia (masterless).
 
 Rakentaa yksinkertainen mutta toimiva kokonaisuus, jota voi laajentaa.
 
-Ympäristö
+
+## Ympäristö
+
 Työ tehtiin Windows 11 Home + PowerShell -ympäristöissä.
 
 Virtuaalikoneena Debian 13 Trixie.
 
 Yhteistyö: projektin repositorio GitHubissa ja kommunikointi Discordissa.
 
-Työvaiheet
+
+## Työvaiheet
+
 1. GitHub-repositorion valmistelu
 Luotiin yhteinen repo ja lisättiin:
 
@@ -61,6 +66,7 @@ Suorittaa Saltin automaattisesti (state.apply) käynnistyksen yhteydessä.
 Tämän ansiosta koko ympäristö asentuu täysin automaattisesti komennolla:
 
 vagrant up
+
 4. Testaus
 Molemmat ajoivat projektin omissa ympäristöissään.
 
@@ -77,17 +83,6 @@ Yhden komennon käyttöönotto.
 
 Selkeä ja laajennettavissa oleva rakenne.
 
-
-Käytimme avainten lisäämiseen Teron ohjeita jotka löysimme täältä: Install Salt https://terokarvinen.com/install-salt-on-debian-13-trixie/
-
-
-Loimme kansiot top fileen johon käytimme Teron antamia ohjeita täältä: http://terokarvinen.com/2024/hello-salt-infra-as-code/
-
-top fileen saimme apua täältä vaikka top file oli hyvin jo muistissa ennestään, mutta aina on hyvä tarkistaa https://docs.saltproject.io/en/latest/ref/states/top.html
-
-Vagrantfileä tehdessä käytimme teron ohjeita joita löysimme täältä https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ mutta tarvitsimme myös tekoälyn käyttöä vagrantfile:lle koska yritimme alkuun ajaa teron versioita mutta emme saaneet saltia toimimaan koska se ei asentunut automaattisesti käynnistyksen yhteydessä. (APT ei löytänyt salt pakettia)
-
-Täältä löysimme apua boot-strap skriptiin jota käytimme vagrantfilessämme: https://smrtalek.medium.com/setup-for-a-saltstack-vagrant-environment-c5b720010e4c
 
 
 
