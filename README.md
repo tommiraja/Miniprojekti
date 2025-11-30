@@ -53,7 +53,7 @@ Sen jälkeen vaihdoimme vielä varmuuden vuoksi koneen ajan oikeaan.
 
 Kun olimme saaneet nämä tehtyä kokeilimme saammeko muutoksia aikaan yhteisellä Github sivustollamme muokkaamalla README.md tiedostoa.
   
-Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
+Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten teimme tiedoston Miniprojekti kansioon.
 
 `sudo nano README.md`
 
