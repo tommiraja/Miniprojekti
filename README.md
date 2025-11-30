@@ -79,7 +79,7 @@ Sirryimme ensiksi `cd /Miniprojekti` kansioon ja sitten
 
 - Sinne lisäsimme kaikki init.sls tiedostot.
 
-<img width="170" height="169" alt="image" src="https://github.com/user-attachments/assets/66f8f18c-ad81-4e1d-b7bf-1426190a5283" />
+- Tältä näytti nyt tekemämme srv/salt kansio Githubissa:
 
 <img width="913" height="352" alt="image" src="https://github.com/user-attachments/assets/9d2e3cf2-4b57-4c9d-9685-b917d0aec792" />
 
