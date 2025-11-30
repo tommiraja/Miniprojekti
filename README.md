@@ -173,17 +173,17 @@ Palvelinten hallinta: https://terokarvinen.com/palvelinten-hallinta/
 
 Salt Vagrant: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
 
-https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/
+Vagrant https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/
 
-https://smrtalek.medium.com/setup-for-a-saltstack-vagrant-environment-c5b720010e4c
+Setup for Salt Vagrant Environment https://smrtalek.medium.com/setup-for-a-saltstack-vagrant-environment-c5b720010e4c
 
-https://docs.saltproject.io/en/latest/ref/states/top.html
+The Top File https://docs.saltproject.io/en/latest/ref/states/top.html
 
-http://terokarvinen.com/2024/hello-salt-infra-as-code/
+Hello Salt Infra as a Code http://terokarvinen.com/2024/hello-salt-infra-as-code/
 
 Raportin kirjoittaminen: https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/
 
-https://terokarvinen.com/install-salt-on-debian-13-trixie/
+Install Salt on Debian 13 Trixie https://terokarvinen.com/install-salt-on-debian-13-trixie/
 
 Käytimme myös lähteinä tunneilta opiskeltuja asioita, joita olimme ottaneet muistiinpanoiksi.
 
